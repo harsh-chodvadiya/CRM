@@ -1,6 +1,8 @@
+import 'package:crm/src/provider/api_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:crm/src/constant/constant.dart';
 import 'package:crm/src/widget/textfield.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -13,6 +15,8 @@ class _LoginState extends State<Login> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
+  final ApiProvider _apiProvider =
+      ApiProvider(); // Create an instance of ApiProvider
 
   @override
   Widget build(BuildContext context) {
@@ -118,14 +122,11 @@ class _LoginState extends State<Login> {
           // Image Side
           Expanded(
             flex: 1,
-            child: Container(
-              color: Colors.blue[50],
-              child: Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: Container(
-                  color: Colors.blue,
-                ),
-              ),
+            child: Image.asset(
+              'assets/login.jpg',
+              fit: BoxFit.contain,
+              height: double.infinity, // Ensure the image takes full height
+              width: double.infinity, // Ensure the image takes full width
             ),
           ),
         ],
@@ -136,6 +137,35 @@ class _LoginState extends State<Login> {
   Future<void> _onLogin() async {
     if (_formKey.currentState!.validate()) {
       // Perform login action
+      final email = _email.text.trim();
+      final password = _password.text.trim();
+
+      try {
+        final response = await _apiProvider.login(email, password);
+        if (response['success']) {
+          // Navigate to the next screen or show a success message
+          // Navigator.pushNamed(
+          //     context, '/home'); // Example of navigation to a home screen
+        } else {
+          // Show error message from API response
+          _showToast('Please check your credentials and try again');
+        }
+      } catch (e) {
+        // Show error message from exception
+        _showToast('Please check your credentials and try again');
+        print('Login failed: $e');
+      }
     }
+  }
+
+  void _showToast(String message) {
+    Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.TOP,
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+      fontSize: 16.0,
+    );
   }
 }
