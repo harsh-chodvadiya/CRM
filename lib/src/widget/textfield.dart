@@ -70,32 +70,35 @@ class MyFormField extends StatelessWidget {
         fillColor: fillColor,
         hintText: hintText,
         helperText: helperText,
+        errorStyle: const TextStyle(
+          fontSize: 12, // Adjust the size of the error message text
+          color: Colors.red, // Customize the color if needed
+        ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14.0.r),
+          borderRadius: BorderRadius.circular(14.0),
           borderSide: const BorderSide(color: Palette.blue),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14.0.r),
+          borderRadius: BorderRadius.circular(14.0),
           borderSide: const BorderSide(color: Palette.blue),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14.0.r),
+          borderRadius: BorderRadius.circular(14.0),
           borderSide: const BorderSide(color: Palette.blue),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14.0.r),
+          borderRadius: BorderRadius.circular(14.0),
           borderSide: const BorderSide(color: Palette.red),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14.0.r),
+          borderRadius: BorderRadius.circular(14.0),
           borderSide: const BorderSide(color: Palette.red),
         ),
         suffixIcon: Padding(
-          padding: EdgeInsets.only(right: 4.0.r),
+          padding: const EdgeInsets.only(right: 4.0),
           child: suffix,
         ),
-        suffixIconConstraints:
-            BoxConstraints(maxHeight: suffixHeight ?? 23.0.r),
+        suffixIconConstraints: BoxConstraints(maxHeight: suffixHeight ?? 23.0),
         prefixIcon: prefix,
         prefixIconConstraints: const BoxConstraints(maxWidth: 60.0),
       ),

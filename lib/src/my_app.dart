@@ -17,17 +17,16 @@ class _MyAppState extends State<MyApp> {
       designSize: const Size(414, 844),
       minTextAdapt: true,
       builder: (context, child) {
-        return NexusApp(
-          onConnectionChange: (result) {},
+        return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: Themes.light,
           darkTheme: Themes.dark,
           themeMode: ThemeMode.light,
           home: const Login(),
-          supportedLocales: const [
-            Locale('en', 'US'),
-            Locale('hi', 'IN'),
-          ],
+          // supportedLocales: const [
+          //   Locale('en', 'US'),
+          //   Locale('hi', 'IN'),
+          // ],
         );
       },
     );
