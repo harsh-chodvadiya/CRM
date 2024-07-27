@@ -20,7 +20,7 @@ class _SideBarState extends State<SideBar> {
   final List<List<dynamic>> _option = [
     ['Dashboard', Icons.dashboard_rounded, 0],
     ['Leads', Icons.list_rounded, 1],
-    ['Contacts', Icons.person_4_rounded, 1],
+    ['Contacts', Icons.person_4_rounded, 2],
   ];
 
   @override
