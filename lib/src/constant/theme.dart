@@ -8,10 +8,10 @@ class Themes {
       brightness: Brightness.light,
       useMaterial3: true,
       colorSchemeSeed: Palette.blue,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarBrightness:
-              Platform.isIOS ? Brightness.light : Brightness.dark,
+          // statusBarBrightness:
+          //     Platform.isIOS ? Brightness.light : Brightness.dark,
           statusBarIconBrightness: Brightness.dark,
           statusBarColor: Palette.transparent,
         ),
@@ -49,10 +49,10 @@ class Themes {
       brightness: Brightness.dark,
       useMaterial3: true,
       colorSchemeSeed: Palette.blue,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarBrightness:
-              Platform.isIOS ? Brightness.dark : Brightness.light,
+          // statusBarBrightness:
+          //     Platform.isIOS ? Brightness.dark : Brightness.light,
           statusBarIconBrightness: Brightness.light,
           statusBarColor: Palette.transparent,
         ),

@@ -18,15 +18,6 @@ Future<void> main() async {
       // } else {
       //   await Firebase.initializeApp();
       // }
-      await Nexus.initLocale(
-        Storage.get(Storage.locale) != null
-            ? Locale(Storage.get(Storage.locale).first,
-                Storage.get(Storage.locale).last)
-            : const Locale('en', 'US'),
-      );
-      if (Storage.get(Storage.locale) == null) {
-        Storage.set(Storage.locale, ['en', 'US']);
-      }
       FlutterError.onError = (errorDetails) {
         Nexus.log('${errorDetails.exception}', logType: Log.error);
         if (!kDebugMode) {

@@ -1,7 +1,7 @@
+import 'package:crm/src/routes/routes.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:crm/src/constant/constant.dart';
-
-import 'view/authentication/login.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -11,23 +11,31 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final _appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(414, 844),
       minTextAdapt: true,
       builder: (context, child) {
-        return NexusApp(
-          onConnectionChange: (result) {},
+        return MaterialApp.router(
+          // onConnectionChange: (result) {},
           debugShowCheckedModeBanner: false,
           theme: Themes.light,
           darkTheme: Themes.dark,
           themeMode: ThemeMode.light,
-          home: const Login(),
-          supportedLocales: const [
-            Locale('en', 'US'),
-            Locale('hi', 'IN'),
-          ],
+          routerDelegate: AutoRouterDelegate(_appRouter),
+          routeInformationParser: _appRouter.defaultRouteParser(),
+          scrollBehavior: const MaterialScrollBehavior().copyWith(
+            dragDevices: {
+              PointerDeviceKind.mouse,
+              PointerDeviceKind.touch,
+              PointerDeviceKind.stylus,
+              PointerDeviceKind.trackpad,
+              PointerDeviceKind.unknown,
+            },
+          ),
         );
       },
     );
