@@ -1,0 +1,22 @@
+name: nexus
+description: A Flutter package for Local Storage, RegExps and Extension.
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+  flutter: ">=2.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  path_provider: ^2.1.1
+  connectivity_plus: ^6.0.3
+
+  nexus_annotation:
+    path: ../nexus_annotation
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

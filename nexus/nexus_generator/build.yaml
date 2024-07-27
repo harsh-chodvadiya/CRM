@@ -1,0 +1,8 @@
+builders:
+  nexus:
+    import: "package:nexus_generator/builder.dart"
+    builder_factories: ["nexus"]
+    build_extensions: { ".dart": [".gr.dart"] }
+    auto_apply: dependents
+    build_to: source
+    

@@ -1,0 +1,10 @@
+name: nexus_annotation
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: ^3.3.4
+
+dependencies:
+
+dev_dependencies:

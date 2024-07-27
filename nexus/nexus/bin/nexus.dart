@@ -1,0 +1,1 @@
+export 'package:nexus/src/utils/generator.dart';
