@@ -6,11 +6,13 @@ import 'package:crm/src/constant/constant.dart';
 import 'package:crm/src/my_app.dart';
 import 'package:crm/src/utils/utils.dart';
 import 'package:nexus/nexus.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 Future<void> main() async {
   await runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+      setPathUrlStrategy();
       await Storage.initialize();
       // await FileOperations.initialize();
       // if (Platform.isIOS) {

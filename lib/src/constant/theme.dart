@@ -7,7 +7,7 @@ class Themes {
     return ThemeData(
       brightness: Brightness.light,
       useMaterial3: true,
-      colorSchemeSeed: Palette.blue,
+      colorSchemeSeed: Palette.textBlue,
       appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle(
           // statusBarBrightness:
@@ -29,7 +29,7 @@ class Themes {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Palette.blue,
+          backgroundColor: Palette.textBlue,
           foregroundColor: Palette.white,
           padding: EdgeInsets.symmetric(vertical: 16.0.r),
           shape: RoundedRectangleBorder(
@@ -48,7 +48,7 @@ class Themes {
     return ThemeData(
       brightness: Brightness.dark,
       useMaterial3: true,
-      colorSchemeSeed: Palette.blue,
+      colorSchemeSeed: Palette.textBlue,
       appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle(
           // statusBarBrightness:
@@ -70,7 +70,7 @@ class Themes {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Palette.blue,
+          backgroundColor: Palette.textBlue,
           foregroundColor: Palette.white,
           padding: EdgeInsets.symmetric(vertical: 16.0.r),
           shape: RoundedRectangleBorder(
